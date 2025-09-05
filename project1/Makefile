@@ -1,3 +1,5 @@
+PORT ?= 4040
+
 all: makeEbpf makeGo
 
 makeEbpf:
@@ -7,4 +9,4 @@ makeGo:
 	go build -o loader main.go
 
 run: all
-	sudo ./loader
+	sudo ./loader $(PORT)
